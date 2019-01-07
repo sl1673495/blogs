@@ -7,9 +7,6 @@
 
 ### Vue
 
-* [Vue源码学习（1）起源](https://github.com/sl1673495/blogs/issues/3)
-* [Vue源码学习（2）初始化](https://github.com/sl1673495/blogs/issues/4)
-* [Vue源码学习（3）响应式数据](https://github.com/sl1673495/blogs/issues/7)
 * [Vue源码学习（4）计算属性computed](https://github.com/sl1673495/blogs/issues/8)
 * [Vue源码学习（5）观察属性watch](https://github.com/sl1673495/blogs/issues/9)
 * [Vue源码学习（6） nextTick](https://github.com/sl1673495/blogs/issues/11)
