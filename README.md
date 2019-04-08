@@ -7,9 +7,9 @@
 
 ### Vue
 
-* [Vue源码学习（4）计算属性computed](https://github.com/sl1673495/blogs/issues/8)
-* [Vue源码学习（5）观察属性watch](https://github.com/sl1673495/blogs/issues/9)
-* [Vue源码学习（6） nextTick](https://github.com/sl1673495/blogs/issues/11)
+* [Vue源码学习 计算属性computed](https://github.com/sl1673495/blogs/issues/8)
+* [Vue源码学习 观察属性watch](https://github.com/sl1673495/blogs/issues/9)
+* [Vue源码学习 nextTick](https://github.com/sl1673495/blogs/issues/11)
 * [cube-ui源码学习 swipe组件](https://github.com/sl1673495/blogs/issues/10)
 * [vue-router源码学习](https://github.com/sl1673495/blogs/issues/2)
 
