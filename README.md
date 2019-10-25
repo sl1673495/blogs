@@ -6,7 +6,7 @@
 ## 目录
 
 ### Vue
-* [Vue项目的热更新怎么辣么好用啊？原来200行代码就搞定（深度解析](https://github.com/sl1673495/blogs/issues/19)
+* [Vue热更新插件vue-hot-reload-api深度解析](https://github.com/sl1673495/blogs/issues/19)
 * [用jsx封装Vue中的复杂组件](https://github.com/sl1673495/blogs/issues/14)
 * [Vue源码学习 计算属性computed](https://github.com/sl1673495/blogs/issues/8)
 * [Vue源码学习 观察属性watch](https://github.com/sl1673495/blogs/issues/9)
