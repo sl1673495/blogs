@@ -24,3 +24,4 @@
 * [关于如何触发浏览器重绘的一些尝试。](https://github.com/sl1673495/blogs/issues/12)
 * [babel7的配置与优化](https://github.com/sl1673495/blogs/issues/13)
 * [英文技术文章阅读。](https://github.com/sl1673495/blogs/issues/15)
+* [中文技术文章阅读。](https://github.com/sl1673495/blogs/issues/18)
