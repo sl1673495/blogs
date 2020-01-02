@@ -6,6 +6,7 @@
 ## 目录
 
 ### Vue
+* [Vue3 + TypeScript + 新型状态管理模式，手把手带你实现小型应用。](https://github.com/sl1673495/blogs/issues/24)
 * [通过实现一个最精简的响应式系统来学习Vue的data、computed、watch。](https://github.com/sl1673495/blogs/issues/20)
 * [Vue热更新插件vue-hot-reload-api深度解析](https://github.com/sl1673495/blogs/issues/19)
 * [用jsx封装Vue中的复杂组件](https://github.com/sl1673495/blogs/issues/14)
