@@ -1,9 +1,12 @@
 # Blog
-我的技术博客，不定时更新
+我的技术博客，不定时更新。
 
-收藏点star，订阅点watch
+收藏点star，订阅点watch。
+
+博客网站：https://ssh-blog.now.sh
 
 ## 目录
+
 ### 学习
 
 [前端「N皇后」递归回溯经典问题图解](https://api.github.com/repos/sl1673495/blogs/issues/51)
