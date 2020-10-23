@@ -3,7 +3,7 @@
 
 收藏点star，订阅点watch。
 
-博客网站：https://ssh-blog.now.sh
+博客网站（不定期同步）：https://ssh-blog.vercel.app
 
 ## 目录
 ### 算法
