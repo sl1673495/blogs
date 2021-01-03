@@ -166,7 +166,7 @@ def get_to_generate_issues(repo, dir_name, issue_number=None):
     return to_generate_issues
 
 
-def main(token, repo_name, issue_number=None, dir_name=BACKUP_DIR):
+def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
     user = login(token)
     me = get_me(user)
     repo = get_repo(user, repo_name)
