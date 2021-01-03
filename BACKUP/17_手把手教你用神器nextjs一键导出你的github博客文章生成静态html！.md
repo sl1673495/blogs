@@ -402,3 +402,7 @@ components目录组件：
 http://blog.shanshihao.cn/474922327  这样的路径去访问博客内容了。
 
 到此我们就完成了手动生成自己的静态博客，nodejs真的是很强大，nextjs也是ssr的神器，在这里也推荐一下jocky老师的nextjs课程 https://coding.imooc.com/class/334.html ，我在这个课程中也学习到了非常多的东西。
+
+---
+
+废弃

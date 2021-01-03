@@ -19,8 +19,6 @@ Thanks to https://github.com/yihong0618/gitblog
 - [手写async await的最简实现（20行）](https://github.com/sl1673495/blogs/issues/59)--2020-09-02
 ## JavaScript
 - [generator函数的本质。](https://github.com/sl1673495/blogs/issues/1)--2018-09-28
-## Next.js
-- [手把手教你用神器nextjs一键导出你的github博客文章生成静态html！](https://github.com/sl1673495/blogs/issues/17)--2019-09-18
 ## React
 - [TypeScript 在 React 中的使用指南](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
