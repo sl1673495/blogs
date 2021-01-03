@@ -7,7 +7,7 @@
 
 Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
-- [TypeScript 在 React 中的使用指南](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
+- [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
@@ -20,7 +20,7 @@ Thanks to https://github.com/yihong0618/gitblog
 ## JavaScript
 - [generator函数的本质。](https://github.com/sl1673495/blogs/issues/1)--2018-09-28
 ## React
-- [TypeScript 在 React 中的使用指南](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
+- [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
 - [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
 - [我在工作中写 React 学到了什么？](https://github.com/sl1673495/blogs/issues/62)--2020-10-20
@@ -41,7 +41,7 @@ Thanks to https://github.com/yihong0618/gitblog
 </details>
 
 ## TypeScript
-- [TypeScript 在 React 中的使用指南](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
+- [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [利用 TS 4.1 新特性实现 Vuex 无限层级命名空间的 dispatch 类型推断。](https://github.com/sl1673495/blogs/issues/60)--2020-09-05
 - [TypeScript 4.1 新特性：字符串模板类型，Vuex 终于有救了？](https://github.com/sl1673495/blogs/issues/57)--2020-09-02
 - [TypeScript 中的子类型、逆变、协变是什么？](https://github.com/sl1673495/blogs/issues/54)--2020-07-30
