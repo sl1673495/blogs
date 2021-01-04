@@ -332,7 +332,7 @@ class E {
 
 与手写的工具/原子 CSS 不同，JS 库能让样式不依赖于 CSS 规则的插入顺序。
 
-在规则冲突的情况下，生效的不是标签上 class atrribute 中的最后一个类，而是样式表中**最后插入**的规则。
+在规则冲突的情况下，生效的不是标签上 class attribute 中的最后一个类，而是样式表中**最后插入**的规则。
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/05aadd15366a4658b166c8e5dca7f57a~tplv-k3u1fbpfcp-watermark.image)
 
