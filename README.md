@@ -17,8 +17,6 @@ Thanks to https://github.com/yihong0618/gitblog
 - [我在工作中写 React 学到了什么？](https://github.com/sl1673495/blogs/issues/62)--2020-10-20
 - [深入探索前端路由，手写 react-mini-router](https://github.com/sl1673495/blogs/issues/61)--2020-09-16
 - [利用 TS 4.1 新特性实现 Vuex 无限层级命名空间的 dispatch 类型推断。](https://github.com/sl1673495/blogs/issues/60)--2020-09-05
-## JavaScript
-- [generator函数的本质。](https://github.com/sl1673495/blogs/issues/1)--2018-09-28
 ## React
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
@@ -120,12 +118,13 @@ Thanks to https://github.com/yihong0618/gitblog
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
 ## 性能优化
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
+- [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
 - [深入解析你不知道的 EventLoop 和浏览器渲染、帧动画、空闲回调](https://github.com/sl1673495/blogs/issues/47)--2020-05-21
 - [为什么 Vue 中不要用 index 作为 key？（diff 算法详解）](https://github.com/sl1673495/blogs/issues/39)--2020-04-02
 - [Vue 和 React 对于组件的更新粒度有什么区别？](https://github.com/sl1673495/blogs/issues/38)--2020-04-01
-- [React Hook + TypeScript 深入浅出实现一个购物车（陷阱、性能优化、自定义hook）](https://github.com/sl1673495/blogs/issues/36)--2020-03-19
 <details><summary>显示更多</summary>
 
+- [React Hook + TypeScript 深入浅出实现一个购物车（陷阱、性能优化、自定义hook）](https://github.com/sl1673495/blogs/issues/36)--2020-03-19
 - [babel7的配置与优化。](https://github.com/sl1673495/blogs/issues/13)--2019-03-15
 - [关于如何触发浏览器重绘的一些尝试。](https://github.com/sl1673495/blogs/issues/12)--2018-11-23
 </details>
