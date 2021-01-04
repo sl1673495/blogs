@@ -1,6 +1,5 @@
 # [Atomic CSS-in-JS](https://github.com/sl1673495/blogs/issues/69)
 
-
 > 原文地址：https://sebastienlorber.com/atomic-css-in-js
 >
 > 翻译 / 润色：ssh
@@ -60,7 +59,7 @@
 
 这种**紧密耦合**在现代 CSS-in-JS 的 React 代码库中也得到了承认，但似乎 是 CSS 世界里最先对传统的**关注点分离**有一些异议。
 
-比较特殊的样式需求也不是什么问题，因为我们使用的是最简单的类选择器。
+CSS 权重也不是什么问题，因为我们使用的是最简单的类选择器。
 
 我们现在通过 html 标签来添加样式，发现了一些有趣的事儿：
 
@@ -426,3 +425,9 @@ import { t } from 'react-native-tailwindcss';
 > “比较特殊的样式需求也不是什么问题，因为我们使用的是最简单的类选择器。” 这里翻译的不对，原文指的是 CSS Specificity。以及作为译文为什么没有贴原文链接？https://sebastienlorber.com/atomic-css-in-js
 
 还未完成。。。 这里是草稿
+
+---
+
+> “比较特殊的样式需求也不是什么问题，因为我们使用的是最简单的类选择器。” 这里翻译的不对，原文指的是 CSS Specificity。以及作为译文为什么没有贴原文链接？https://sebastienlorber.com/atomic-css-in-js
+
+已经把完成度高一些的版本粘贴过来了，多谢大佬的指正~ 哈哈。
