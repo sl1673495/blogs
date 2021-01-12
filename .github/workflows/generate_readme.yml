@@ -56,8 +56,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: yarn
-      - run: yarn build
+      - run: npm install
+      - run: npm run build
         env:
           CI: true
 
@@ -65,7 +65,7 @@ jobs:
         uses: github-actions-x/commit@v2.6
         with:
           github-token: ${{ secrets.G_T }}
-          commit-message: 'Refresh README AND BACK UP'
+          commit-message: 'Refresh README and pages'
           files: README.md src/pages/ public/
           rebase: 'true'
           name: ${{ env.GITHUB_NAME }}
