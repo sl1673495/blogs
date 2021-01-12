@@ -184,9 +184,11 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
 
 
 def save_issue(issue, me, dir_name=BACKUP_DIR):
-    md_name = os.path.join(
-        dir_name, str(issue.id), "index.md"
+    md_dir = os.path.join(
+        dir_name, str(issue.id)
     )
+    os.makedirs(md_dir)
+    md_name = os.path.join(md_dir, "index.md")
     with open(md_name, "w") as f:
         f.write('---\n')
         f.write(f"title: '{issue.title}'\n")
