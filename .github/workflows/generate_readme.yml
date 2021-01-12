@@ -49,13 +49,30 @@ jobs:
         run: |
           source venv/bin/activate
           python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_numbe '${{ github.event.issue.number }}'
-        
+
       - name: Push README
         uses: github-actions-x/commit@v2.6
         with:
           github-token: ${{ secrets.G_T }}
-          commit-message: "Refresh README AND BACK UP"
+          commit-message: 'Refresh README AND BACK UP'
           files: README.md BACKUP/
           rebase: 'true'
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run build
+        env:
+          CI: true

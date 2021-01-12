@@ -14,7 +14,7 @@ MD_HEAD = """## ssh 的博客
 Thanks to https://github.com/yihong0618/gitblog
 """
 
-BACKUP_DIR = "BACKUP"
+BACKUP_DIR = "src/pages"
 ANCHOR_NUMBER = 5
 TOP_ISSUES_LABELS = ["Top"]
 TODO_ISSUES_LABELS = ["TODO"]
