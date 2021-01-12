@@ -135,7 +135,8 @@ def add_md_label(repo, md, me):
             issues = get_issues_from_label(repo, label)
             if issues.totalCount:
                 md.write("## " + label.name + "\n")
-                issues = sorted(issues, key=lambda x: x.created_at, reverse=True)
+                issues = sorted(
+                    issues, key=lambda x: x.created_at, reverse=True)
             i = 0
             for issue in issues:
                 if not issue:
@@ -187,7 +188,11 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
         dir_name, f"{issue.number}_{issue.title.replace(' ', '.')}.md"
     )
     with open(md_name, "w") as f:
-        f.write(f"# [{issue.title}]({issue.html_url})\n\n")
+        f.write('---')
+        f.write(f"title: {issue.title}")
+        f.write(f"date: {issue.created_at.fromisoformat('YYYY-MM-DD')}")
+        f.write("spoiler: ''")
+        f.write('---\n\n')
         f.write(issue.body)
         if issue.comments:
             for c in issue.get_comments():
@@ -202,6 +207,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
     parser.add_argument("repo_name", help="repo_name")
-    parser.add_argument("--issue_number", help="issue_number", default=None, required=False)
+    parser.add_argument("--issue_number", help="issue_number",
+                        default=None, required=False)
     options = parser.parse_args()
     main(options.github_token, options.repo_name, options.issue_number)
