@@ -54,17 +54,18 @@ jobs:
         uses: github-actions-x/commit@v2.6
         with:
           github-token: ${{ secrets.G_T }}
-          commit-message: 'Refresh README AND pages'
+          commit-message: 'Refresh README AND BACK UP'
           files: README.md src/pages/
           rebase: 'true'
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
-      - uses: actions/checkout@v2
-        - name: Use Node.js 12.x
-          uses: actions/setup-node@v1
-          with:
-            node-version: 12.x
-        - run: npm install
-        - run: npm run build
-          env:
-            CI: true
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm install
+      - run: npm run build
+        env:
+          CI: true
