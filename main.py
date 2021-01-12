@@ -190,7 +190,7 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
     with open(md_name, "w") as f:
         f.write('---')
         f.write(f"title: {issue.title}")
-        f.write(f"date: {issue.created_at.fromisoformat('YYYY-MM-DD')}")
+        f.write(f"date: {issue.created_at.strftime('%Y-%m-%d')}")
         f.write("spoiler: ''")
         f.write('---\n\n')
         f.write(issue.body)
