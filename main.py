@@ -188,10 +188,10 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
         dir_name, f"{issue.number}_{issue.title.replace(' ', '.')}.md"
     )
     with open(md_name, "w") as f:
-        f.write('---')
-        f.write(f"title: {issue.title}")
-        f.write(f"date: {issue.created_at.strftime('%Y-%m-%d')}")
-        f.write("spoiler: ''")
+        f.write('---\n')
+        f.write(f"title: '{issue.title}'\n")
+        f.write(f"date: '{issue.created_at.strftime('%Y-%m-%d')}'\n")
+        f.write("spoiler: ''\n")
         f.write('---\n\n')
         f.write(issue.body)
         if issue.comments:
