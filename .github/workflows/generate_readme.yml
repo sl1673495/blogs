@@ -55,23 +55,19 @@ jobs:
         with:
           github-token: ${{ secrets.G_T }}
           commit-message: 'Refresh README AND BACK UP'
-          files: README.md BACKUP/
+          files: README.md
           rebase: 'true'
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 12.x
       - run: npm install
       - run: npm run build
         env:
