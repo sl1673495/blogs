@@ -187,7 +187,8 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
     md_dir = os.path.join(
         dir_name, str(issue.id)
     )
-    os.makedirs(md_dir)
+    if not os.path.exists(BACKUP_DIR):
+        os.makedirs(md_dir)
     md_name = os.path.join(md_dir, "index.md")
     with open(md_name, "w") as f:
         f.write('---\n')
