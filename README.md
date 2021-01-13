@@ -7,7 +7,7 @@
 
 Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
-- [Atomic CSS-in-JS](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
+- [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
@@ -15,8 +15,6 @@ Thanks to https://github.com/yihong0618/gitblog
 - [字节跳动招人啦](https://github.com/sl1673495/blogs/issues/64)--2020-11-17
 - [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
 - [我在工作中写 React 学到了什么？](https://github.com/sl1673495/blogs/issues/62)--2020-10-20
-- [深入探索前端路由，手写 react-mini-router](https://github.com/sl1673495/blogs/issues/61)--2020-09-16
-- [利用 TS 4.1 新特性实现 Vuex 无限层级命名空间的 dispatch 类型推断。](https://github.com/sl1673495/blogs/issues/60)--2020-09-05
 ## React
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
@@ -88,9 +86,9 @@ Thanks to https://github.com/yihong0618/gitblog
 - [Vue源码学习 观察属性watch](https://github.com/sl1673495/blogs/issues/9)--2018-11-09
 - [Vue源码学习 计算属性computed](https://github.com/sl1673495/blogs/issues/8)--2018-10-17
 - [Vue源码学习 响应式数据](https://github.com/sl1673495/blogs/issues/7)--2018-10-16
-- [vue-router源码学习](https://github.com/sl1673495/blogs/issues/2)--2018-09-28
 </details>
 
+## dependencies
 ## 学习
 - [中级前端面试指南](https://github.com/sl1673495/blogs/issues/52)--2020-06-27
 - [前端「N皇后」递归回溯经典问题图解](https://github.com/sl1673495/blogs/issues/51)--2020-06-18
@@ -114,7 +112,7 @@ Thanks to https://github.com/yihong0618/gitblog
 </details>
 
 ## 工程化
-- [Atomic CSS-in-JS](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
+- [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
 ## 性能优化
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
