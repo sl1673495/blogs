@@ -153,7 +153,6 @@ def add_md_label(repo, md, me):
 
 
 def get_to_generate_issues(repo, dir_name, issue_number=None):
-    md_files = os.listdir(dir_name)
     to_generate_issues = [
         i
         for i in list(repo.get_issues())
