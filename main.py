@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import argparse
 import os
+import shutil
 
 from github import Github
 
@@ -193,8 +194,8 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
 
 
 if __name__ == "__main__":
+    shutil.rmtree(BACKUP_DIR, True)
     os.makedirs(BACKUP_DIR)
-    os.mkdir(BACKUP_DIR)
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
     parser.add_argument("repo_name", help="repo_name")
