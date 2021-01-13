@@ -172,7 +172,7 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
         func(repo, "README.md", me)
 
     to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
-
+    print("to_generate_issues", to_generate_issues)
     # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
@@ -192,11 +192,6 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
         f.write("spoiler: ''\n")
         f.write('---\n\n')
         f.write(issue.body)
-        if issue.comments:
-            for c in issue.get_comments():
-                if isMe(c, me):
-                    f.write("\n\n---\n\n")
-                    f.write(c.body)
 
 
 if __name__ == "__main__":
