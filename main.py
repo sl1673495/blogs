@@ -154,13 +154,9 @@ def add_md_label(repo, md, me):
 
 def get_to_generate_issues(repo, dir_name, issue_number=None):
     md_files = os.listdir(dir_name)
-    generated_issues_numbers = [
-        int(i.split("_")[0]) for i in md_files if i.split("_")[0].isdigit()
-    ]
     to_generate_issues = [
         i
         for i in list(repo.get_issues())
-        if int(i.number) not in generated_issues_numbers
     ]
     if issue_number:
         to_generate_issues.append(repo.get_issue(int(issue_number)))

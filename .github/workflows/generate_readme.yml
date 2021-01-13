@@ -71,6 +71,7 @@ jobs:
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
       - name: Vercel Action
+        id: vercel-action
         uses: amondnet/vercel-action@v20.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -82,4 +83,4 @@ jobs:
           working-directory: ./public
       - name: preview-url
         run: |
-          echo ${{ steps.now-deployment.outputs.preview-url }}
+          echo 发布成功：${{ steps.vercel-action.outputs.preview-url }}
