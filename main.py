@@ -176,6 +176,7 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
     # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
+    print("listdir", os.listdir(dir_name))
 
 
 def save_issue(issue, me, dir_name=BACKUP_DIR):
