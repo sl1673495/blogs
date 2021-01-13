@@ -180,7 +180,7 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
 
 def save_issue(issue, me, dir_name=BACKUP_DIR):
     md_dir = os.path.join(
-        dir_name, str(issue.id) + '_' + str(issue_title)
+        dir_name, str(issue.id) + '_' + str(issue.title)
     )
     os.makedirs(md_dir)    
     md_name = os.path.join(md_dir, "index.md")
