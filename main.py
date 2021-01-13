@@ -153,10 +153,11 @@ def add_md_label(repo, md, me):
                 md.write("\n")
 
 
-def get_to_generate_issues(repo, dir_name, issue_number=None):
+def get_to_generate_issues(repo, dir_name, issue_number=None, me):
     to_generate_issues = [
         i
         for i in list(repo.get_issues())
+        if isMe(i, me)
     ]
     if issue_number:
         to_generate_issues.append(repo.get_issue(int(issue_number)))
@@ -172,7 +173,7 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
     for func in [add_md_top, add_md_recent, add_md_label, add_md_todo]:
         func(repo, "README.md", me)
 
-    to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
+    to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number, me)
     # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
