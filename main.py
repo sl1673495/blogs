@@ -176,8 +176,7 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
     # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
-    print("listdir", os.listdir(dir_name))
-    print("cwd", os.getcwd())
+    print("listdir1", os.listdir("/home/runner/work/blogs/blogs/src/pages"))
 
 
 def save_issue(issue, me, dir_name=BACKUP_DIR):
@@ -205,3 +204,4 @@ if __name__ == "__main__":
                         default=None, required=False)
     options = parser.parse_args()
     main(options.github_token, options.repo_name, options.issue_number)
+    print("listdir2", os.listdir("/home/runner/work/blogs/blogs/src/pages"))
