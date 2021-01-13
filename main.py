@@ -172,7 +172,6 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
         func(repo, "README.md", me)
 
     to_generate_issues = get_to_generate_issues(repo, dir_name, issue_number)
-    print("to_generate_issues", to_generate_issues)
     # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
@@ -182,8 +181,7 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
     md_dir = os.path.join(
         dir_name, str(issue.id)
     )
-    if not os.path.exists(md_dir):
-        os.makedirs(md_dir)
+    os.makedirs(md_dir)    
     md_name = os.path.join(md_dir, "index.md")
     with open(md_name, "w") as f:
         f.write('---\n')
@@ -195,7 +193,7 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
 
 
 if __name__ == "__main__":
-    os.makedirs(BACKUP_DIR):
+    os.makedirs(BACKUP_DIR)
     os.mkdir(BACKUP_DIR)
     parser = argparse.ArgumentParser()
     parser.add_argument("github_token", help="github_token")
