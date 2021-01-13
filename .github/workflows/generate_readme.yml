@@ -70,3 +70,16 @@ jobs:
           rebase: 'true'
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
+      - name: Vercel Action
+        uses: amondnet/vercel-action@v20.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: '--prod'
+          github-comment: false
+          vercel-org-id: ${{ secrets.NOW_ORG_ID }}
+          vercel-project-id: ${{ secrets.NOW_PROJECT_ID_STATIC }}
+          working-directory: ./public
+      - name: preview-url
+        run: |
+          echo ${{ steps.now-deployment.outputs.preview-url }}
