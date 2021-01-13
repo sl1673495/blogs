@@ -177,6 +177,7 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
     print("listdir", os.listdir(dir_name))
+    print("cwd", os.getcwd())
 
 
 def save_issue(issue, me, dir_name=BACKUP_DIR):
