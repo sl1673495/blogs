@@ -14,6 +14,19 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?2d469ac33bc67920e2896088ec7b4a77";
+                var s = document.getElementsByTagName("script")[0]; 
+                s.parentNode.insertBefore(hm, s);
+              })();
+          `,
+            }}
+          />
         </head>
         <body {...this.props.bodyAttributes} className="light">
           <script
