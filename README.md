@@ -7,6 +7,7 @@
 
 Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
+- [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
 - [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
@@ -14,15 +15,15 @@ Thanks to https://github.com/yihong0618/gitblog
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
 - [字节跳动招人啦](https://github.com/sl1673495/blogs/issues/64)--2020-11-17
 - [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
-- [我在工作中写 React 学到了什么？](https://github.com/sl1673495/blogs/issues/62)--2020-10-20
 ## React
+- [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
 - [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
 - [我在工作中写 React 学到了什么？](https://github.com/sl1673495/blogs/issues/62)--2020-10-20
-- [深入探索前端路由，手写 react-mini-router](https://github.com/sl1673495/blogs/issues/61)--2020-09-16
 <details><summary>显示更多</summary>
 
+- [深入探索前端路由，手写 react-mini-router](https://github.com/sl1673495/blogs/issues/61)--2020-09-16
 - [Vue3 究竟好在哪里？（和 React Hook 的详细对比）](https://github.com/sl1673495/blogs/issues/46)--2020-04-20
 - [Vue 和 React 对于组件的更新粒度有什么区别？](https://github.com/sl1673495/blogs/issues/38)--2020-04-01
 - [React Hook + TypeScript 深入浅出实现一个购物车（陷阱、性能优化、自定义hook）](https://github.com/sl1673495/blogs/issues/36)--2020-03-19
