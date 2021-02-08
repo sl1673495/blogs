@@ -7,14 +7,14 @@
 
 Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
+- [尤雨溪：关于 Vue3 和生活，想和前端们聊聊这些](https://github.com/sl1673495/blogs/issues/74)--2021-02-08
+- [Vuex 4.0 正式发布！新年官方生态齐聚一堂](https://github.com/sl1673495/blogs/issues/73)--2021-02-05
 - [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
 - [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
-- [字节跳动招人啦](https://github.com/sl1673495/blogs/issues/64)--2020-11-17
-- [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
 ## React
 - [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
@@ -57,14 +57,13 @@ Thanks to https://github.com/yihong0618/gitblog
 </details>
 
 ## Vue
-- [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
 - [利用 TS 4.1 新特性实现 Vuex 无限层级命名空间的 dispatch 类型推断。](https://github.com/sl1673495/blogs/issues/60)--2020-09-05
 - [Vue3 + TypeScript 实现递归菜单组件](https://github.com/sl1673495/blogs/issues/56)--2020-08-21
 - [Vue3 究竟好在哪里？（和 React Hook 的详细对比）](https://github.com/sl1673495/blogs/issues/46)--2020-04-20
 - [Vue3 的响应式和以前有什么区别，Proxy 无敌？](https://github.com/sl1673495/blogs/issues/44)--2020-04-13
+- [Vue 的计算属性真的会缓存吗？（原理揭秘）](https://github.com/sl1673495/blogs/issues/43)--2020-04-10
 <details><summary>显示更多</summary>
 
-- [Vue 的计算属性真的会缓存吗？（原理揭秘）](https://github.com/sl1673495/blogs/issues/43)--2020-04-10
 - [驳《前端常见的Vue面试题目汇总》](https://github.com/sl1673495/blogs/issues/42)--2020-04-09
 - [Vue 进阶必学之高阶组件实战](https://github.com/sl1673495/blogs/issues/41)--2020-04-06
 - [Vue 的生命周期之间到底做了什么事清？（源码详解）](https://github.com/sl1673495/blogs/issues/40)--2020-04-04
@@ -90,6 +89,10 @@ Thanks to https://github.com/yihong0618/gitblog
 </details>
 
 ## dependencies
+## 前端趋势
+- [尤雨溪：关于 Vue3 和生活，想和前端们聊聊这些](https://github.com/sl1673495/blogs/issues/74)--2021-02-08
+- [Vuex 4.0 正式发布！新年官方生态齐聚一堂](https://github.com/sl1673495/blogs/issues/73)--2021-02-05
+- [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
 ## 学习
 - [中级前端面试指南](https://github.com/sl1673495/blogs/issues/52)--2020-06-27
 - [前端「N皇后」递归回溯经典问题图解](https://github.com/sl1673495/blogs/issues/51)--2020-06-18
