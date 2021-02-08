@@ -183,6 +183,7 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
     md_dir = os.path.join(
         dir_name, str(issue.id)
     )
+    os.rmdir
     os.makedirs(md_dir)    
     md_name = os.path.join(md_dir, "index.md")
     with open(md_name, "w") as f:
@@ -193,7 +194,8 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
         f.write('---\n\n')
         f.write(issue.body)
 
-shutil.rmtree(BACKUP_DIR, True)
+print(os.path.abspath(BACKUP_DIR))
+shutil.rmtree(os.path.abspath(BACKUP_DIR))
 os.makedirs(BACKUP_DIR)
 parser = argparse.ArgumentParser()
 parser.add_argument("github_token", help="github_token")
