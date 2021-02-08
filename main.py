@@ -193,14 +193,11 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
         f.write('---\n\n')
         f.write(issue.body)
 
-
-if __name__ == "__main__":
-    shutil.rmtree(BACKUP_DIR, True)
-    os.makedirs(BACKUP_DIR)
-    parser = argparse.ArgumentParser()
-    parser.add_argument("github_token", help="github_token")
-    parser.add_argument("repo_name", help="repo_name")
-    parser.add_argument("--issue_number", help="issue_number",
-                        default=None, required=False)
-    options = parser.parse_args()
-    main(options.github_token, options.repo_name, options.issue_number)
+shutil.rmtree(BACKUP_DIR, True)
+os.makedirs(BACKUP_DIR)
+parser = argparse.ArgumentParser()
+parser.add_argument("github_token", help="github_token")
+parser.add_argument("repo_name", help="repo_name")
+parser.add_argument("--issue_number", help="issue_number", default=None, required=False)
+options = parser.parse_args()
+main(options.github_token, options.repo_name, options.issue_number)
