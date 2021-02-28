@@ -73,3 +73,5 @@ yarn-error.log
 
 # Webstorm
 .idea
+
+venv/
