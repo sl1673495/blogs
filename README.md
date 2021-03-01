@@ -7,7 +7,7 @@
 
 Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
-- [给 antd 的 Table 编写缩进线、懒加载等功能，以及插件机制在组件中的探索](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
+- [通过设计「插件」机制，给  Table 组件编写缩进指引线、懒加载等功能](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
 - [TypeScript 中你不一定知道的 top types，在用 any 之前先试试 unknown？](https://github.com/sl1673495/blogs/issues/76)--2021-02-28
 - [浅谈 Vite 2.0 原理，依赖预编译，插件机制是如何兼容 Rollup 的？](https://github.com/sl1673495/blogs/issues/75)--2021-02-21
 - [尤雨溪：关于 Vue3 和生活，想和前端们聊聊这些](https://github.com/sl1673495/blogs/issues/74)--2021-02-08
@@ -16,7 +16,7 @@ Thanks to https://github.com/yihong0618/gitblog
 - [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 ## React
-- [给 antd 的 Table 编写缩进线、懒加载等功能，以及插件机制在组件中的探索](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
+- [通过设计「插件」机制，给  Table 组件编写缩进指引线、懒加载等功能](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
 - [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19

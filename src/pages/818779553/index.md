@@ -1,5 +1,5 @@
 ---
-title: '给 antd 的 Table 编写缩进线、懒加载等功能，以及插件机制在组件中的探索'
+title: '通过设计「插件」机制，给  Table 组件编写缩进指引线、懒加载等功能'
 date: '2021-03-01'
 spoiler: ''
 ---
@@ -66,9 +66,31 @@ const treeData = [
 1. 当前节点的层级信息。
 2. 当前节点的父节点是否是展开状态。
 
-所以思路就是对数据进行一次递归处理，把层级标记在节点上，并且要把父节点的引用也标记上，之后再通过传给 `Table` 的 `expandedRowKeys` 属性来维护表格的展开行数据。
+所以思路就是对数据进行一次**递归处理**，把**层级**写在节点上，并且要把**父节点的引用**也写上，之后再通过传给 `Table` 的 `expandedRowKeys` 属性来维护表格的展开行数据。
+
+这里我是直接改写了原始数据，如果需要保证原始数据干净的话，也可以参考 React Fiber 的思路，构建一颗替身树进行数据写入，只要保留原始树节点的引用即可。
 
 ```js
+/**
+ * 递归树的通用函数
+ */
+const traverseTree = (
+  treeList,
+  childrenColumnName,
+  callback
+) => {
+  const traverse = (list, parent = null, level = 1) => {
+    list.forEach(treeNode => {
+      callback(treeNode, parent, level);
+      const { [childrenColumnName]: next } = treeNode;
+      if (Array.isArray(next)) {
+        traverse(next, treeNode, level + 1);
+      }
+    });
+  };
+  traverse(treeList);
+};
+
 function rewriteTree({ dataSource }) {
   traverseTree(dataSource, childrenColumnName, (node, parent, level) => {
     // 记录节点的层级
@@ -131,12 +153,17 @@ const indentLines = renderIndentLines(level)
 又来到递归树的逻辑中，我们加入这样的一段代码：
 
 ```js
-if (node[hasNextKey]) {
-  // 树表格组件要求 next 必须是非空数组才会渲染「展开按钮」
-  // 所以这里手动添加一个占位节点数组
-  // 后续在 onExpand 的时候再加载更多节点 并且替换这个数组
-  node[childrenColumnName] = [generateInternalLoadingNode(rowKey)]
+function rewriteTree({ dataSource }) {
+  traverseTree(dataSource, childrenColumnName, (node, parent, level) => {
+    if (node[hasNextKey]) {
+      // 树表格组件要求 next 必须是非空数组才会渲染「展开按钮」
+      // 所以这里手动添加一个占位节点数组
+      // 后续在 onExpand 的时候再加载更多节点 并且替换这个数组
+      node[childrenColumnName] = [generateInternalLoadingNode(rowKey)]
+    }
+  })
 }
+
 ```
 
 之后我们要实现一个 `forceUpdate` 函数，驱动组件强制渲染：
@@ -315,7 +342,7 @@ export const TreeTable = (rawProps) => {
 }
 ```
 
-回忆一下 Vite 等构建工具提供的插件机制，就是对外提供一些时机的钩子，还有一些工具方法，让用户去写一些配置代码，以此介入框架运行的各个时机之中。
+回忆一下社区中一些开源框架提供的插件机制，比如 [Vite 的插件](https://cn.vitejs.dev/guide/api-plugin.html)、[Webpack 的插件](https://webpack.docschina.org/concepts/plugins/) 甚至大家很熟悉的 [Vue.use()](https://cn.vuejs.org/v2/api/#Vue-use)，它们本质上对外暴露出一些内部的时机和属性，让用户去写一些代码来介入框架运行的各个时机之中。
 
 那么，我们是否可以考虑把「处理每个节点、`column`、每次 `onExpand`」 的时机暴露出去。
 
@@ -326,7 +353,7 @@ export const TreeTable = (rawProps) => {
 1. **逻辑解耦**，把每个小功能的代码收缩到插件文件中去，不和组件耦合起来，增加可维护性。
 2. **用户共建**，内部使用的话同事方便共建，开源后社区方便共建，当然这要求你编写的插件机制足够完善，文档足够友好。
 
-当然插件也会带来一些缺点，设计一套完善的插件机制也是非常复杂的，像 webpack、rollup、redux 的插件机制都有设计的非常精良的地方可以参考学习。
+当然插件也会带来一些缺点，设计一套完善的插件机制也是非常复杂的，像 Webpack、Rollup、Redux 的插件机制都有设计的非常精良的地方可以参考学习。
 
 不过回到本文，我只是实现的一个最简化版的插件系统。
 
@@ -350,13 +377,20 @@ export interface TreeTablePlugin<T = any> {
     onExpand?(expanded, record): void
   }
 }
+
+export interface TreeTablePluginContext {
+  forceUpdate: React.DispatchWithoutAction;
+  addChildList(record, childList): void;
+  expandedRowKeys: TableProps<any>['expandedRowKeys'];
+  setExpandedRowKeys: (v: string[] | number[] | undefined) => void;
+}
 ```
 
 我把插件设计成一个**函数**，这样每次执行都可以拿到最新的 `props` 和 `context`。
 
 `context` 其实就是组件内一些依赖上下文的工具函数等等，比如 `forceUpdate`, `addChildList` 等函数都可以挂在上面。
 
-接下来，由于插件可能有多个，而且内部可能会有一些解析流程，所以我设计一个插件的包装函数 `usePluginContainer`：
+接下来，由于插件可能有多个，而且内部可能会有一些解析流程，所以我设计一个运行插件的 hook 函数 `usePluginContainer`：
 
 ```ts
 export const usePluginContainer = (
@@ -391,7 +425,7 @@ export const usePluginContainer = (
 
 目前的流程很简单，只是把每个 `plugin` 函数调用一下，然后提供对外的包装接口。
 
-接着就可以在组件中调用这个工具函数：
+接着就可以在组件中调用这个 hook 函数：
 
 ```ts
 export const TreeTable: React.FC<ITreeTableProps> = (props) => {
@@ -417,7 +451,7 @@ export const TreeTable: React.FC<ITreeTableProps> = (props) => {
 }
 ```
 
-之后，在各个流程的相应位置，都通过这个插件包装来执行相应的函数即可：
+之后，在各个流程的相应位置，都通过这个 hook 返回的实例来执行相应的函数即可：
 
 ```ts
 export const TreeTable: React.FC<ITreeTableProps> = props => {
