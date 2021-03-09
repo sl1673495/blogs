@@ -175,3 +175,11 @@ function assertIsRegExp(arg: unknown): asserts arg is RegExp {
   }
 }
 ```
+
+## 感谢大家
+
+欢迎关注 ssh，前端潮流趋势、原创面试热点文章应有尽有。
+
+记得关注后加我好友，我会不定期分享前端知识，行业信息。2021 陪你一起度过。
+
+![image](https://user-images.githubusercontent.com/23615778/108619258-76929d80-745e-11eb-90bf-023abec85d80.png)

@@ -1,5 +1,5 @@
 ---
-title: '通过设计「插件」机制，给  Table 组件编写缩进指引线、懒加载等功能'
+title: '给  Antd Table 组件编写缩进指引线、子节点懒加载等功能'
 date: '2021-03-01'
 spoiler: ''
 ---
@@ -10,17 +10,11 @@ spoiler: ''
 - ✨ 远程**懒加载**子节点
 - ✨ 每个层级支持**分页**
 
-如果仅仅是这些相对常见业务功能，其实我也不想啰嗦的写成一篇文章。
+本系列分为两篇文章，这篇只是讲这些业务需求如何实现。
 
-在这个组件写到后面功能越来越多臃肿的时候，我发现已经各个功能所需要的代码东一堆、西一堆，组件已经变得很难维护了。
+而下一篇，我会讲解怎么给**组件**也设计一套简单的**插件机制**，来解决代码耦合，难以维护的问题。
 
-一个函数里可能既有懒加载需要的逻辑，又有分页需要的逻辑，更不敢想象再继续加功能时候的痛苦。
-
-这时候我就想，社区知名的框架都是怎么解决耦合机制的呢？**插件**这个词进入了我的脑海，没错，正是插件机制把各种各样逻辑从主框架中**解耦**出来。
-
-所以本文我想重点讲的是，怎么给**组件**也设计一套简单的**插件机制**，来解决代码耦合，难以维护的问题。
-
-业务功能实现的部分作为引子，简单看看即可。
+代码已经发布在 [react-antd-treetable](https://github.com/sl1673495/react-antd-treetable)，欢迎 Star~
 
 ## 功能实现
 
@@ -201,11 +195,15 @@ function addChildList(record, childList) {
 ```
 
 这里 `onLoadMore` 是用户传入的获取更多子节点的方法，
-这里比较容易 hack 的地方在于，组件进行展开先给节点写入一个正在加载的标志，然后强制渲染，在加载完成后赋值了新的子节点 `record[childrenColumnName] = childList` 后，我们又通过 `forceUpdate` 去强制组件重渲染，展示出新的子节点。
+
+流程是这样的：
+
+1. 节点展开时，先给节点写入一个正在加载的标志，然后把子数据重置为空。这样虽然节点会变成展开状态，但是不会渲染子节点，然后强制渲染。
+2. 在加载完成后赋值了新的子节点 `record[childrenColumnName] = childList` 后，我们又通过 `forceUpdate` 去强制组件重渲染，展示出新的子节点。
 
 需要注意，我们递归树加入逻辑的所有逻辑都在 `rewriteTree` 中，所以对于加入的新的子节点，也需要通过这个函数递归一遍，加入 `level`, `parent` 等信息。
 
-新加入的节点的 `level` 需要根据父节点的 `level` 相加得出，不能从 1 开始，否则渲染的缩进线就乱掉了，所以这个函数需要改写，加入 `parentNode` 父节点参数。
+新加入的节点的 `level` 需要根据父节点的 `level` 相加得出，不能从 1 开始，否则渲染的缩进线就乱掉了，所以这个函数需要改写，加入 `parentNode` 父节点参数，遍历时写入的 `level` 都要加上父节点已有的 `level`。
 
 ```js
 function rewriteTree({
@@ -217,10 +215,11 @@ function rewriteTree({
   const startLevel = parentNode?.[INTERNAL_LEVEL] || 0
 
   traverseTree(dataSource, childrenColumnName, (node, parent, level) => {
-    // 记录节点的层级
-    node[INTERNAL_LEVEL] = level + startLevel
-    // 记录节点的父节点
-    node[INTERNAL_PARENT] = parent || parentNode
+      parent = parent || parentNode;
+      // 记录节点的层级
+      node[INTERNAL_LEVEL] = level + startLevel;
+      // 记录节点的父节点
+      node[INTERNAL_PARENT] = parent;
 
     if (node[hasNextKey]) {
       // 树表格组件要求 next 必须是非空数组才会渲染「展开按钮」
@@ -258,7 +257,7 @@ export const TreeTableExpandIcon = ({
 
 之后在 `column` 的 `render` 中改写这个节点的渲染逻辑。
 
-改写节点：
+改写 `record`：
 
 ```js
 function rewriteTree({
@@ -270,19 +269,26 @@ function rewriteTree({
   const startLevel = parentNode?.[INTERNAL_LEVEL] || 0
 
   traverseTree(dataSource, childrenColumnName, (node, parent, level) => {
-    // ……之前的逻辑省略
+    // 加载更多逻辑
+    if (node[hasNextKey]) {
+      // 树表格组件要求 next 必须是非空数组才会渲染「展开按钮」
+      // 所以这里手动添加一个占位节点数组
+      // 后续在 onExpand 的时候再加载更多节点 并且替换这个数组
+      node[childrenColumnName] = [generateInternalLoadingNode(rowKey)]
+    }
 
     // 分页逻辑
     if (childrenPagination) {
-      const { totalKey } = childrenPagination
-      const nodeChildren = node[childrenColumnName]
+      const { totalKey } = childrenPagination;
+      const nodeChildren = node[childrenColumnName] || [];
+      const [lastChildNode] = nodeChildren.slice?.(-1);
       // 渲染分页器，先加入占位节点
       if (
         node[totalKey] > nodeChildren?.length &&
         // 防止重复添加分页器占位符
-        !isInternalPaginationNode(nodeChildren[nodeChildren.length - 1], rowKey)
+        !isInternalPaginationNode(lastChildNode, rowKey)
       ) {
-        nodeChildren?.push?.(generateInternalPaginationNode(rowKey))
+        nodeChildren?.push?.(generateInternalPaginationNode(rowKey));
       }
     }
   })
@@ -317,245 +323,70 @@ function rewriteColumns() {
 来看一下实现的分页效果：
 ![分页](https://images.gitee.com/uploads/images/2021/0301/181948_efc006a8_1087321.gif 'Kapture 2021-03-01 at 18.19.38.gif')
 
-## 利用插件机制重构
+## 重构和优化
 
-到这里我们已经可以发现，分页相关的逻辑被分散在 `rewriteTree` 和 `rewriteColumns` 中，而加载更多的逻辑被分散在 `rewriteTree` 和 `onExpand` 中，组件的代码行数也已经来到了 `300` 行。
+随着编写功能的增多，逻辑被耦合在 Antd Table 的各个回调函数之中，
 
-大概看一下代码的结构，已经是比较混乱了：
+- **指引线**的逻辑分散在 `rewriteColumns`, `components`中。
+-  **分页**的逻辑被分散在 `rewriteColumns` 和 `rewriteTree` 中。
+- **加载更多**的逻辑被分散在 `rewriteTree` 和 `onExpand` 中
+
+至此，组件的代码行数也已经来到了 `300` 行，大概看一下代码的结构，已经是比较混乱了：
 
 ```js
 export const TreeTable = (rawProps) => {
   function rewriteTree() {
-    // 加载更多逻辑
-    // 分页逻辑
+    // 🎈加载更多逻辑
+    // 🔖 分页逻辑
   }
 
   function rewriteColumns() {
-    // 分页逻辑
+    // 🔖 分页逻辑
+    // 🏁 缩进线逻辑
+  }
+
+  const components = {
+    // 🏁 缩进线逻辑
   }
 
   const onExpand = async (expanded, record) => {
-    // 加载更多逻辑
+    // 🎈 加载更多逻辑
   }
 
   return <Table />
 }
 ```
 
-回忆一下社区中一些开源框架提供的插件机制，比如 [Vite 的插件](https://cn.vitejs.dev/guide/api-plugin.html)、[Webpack 的插件](https://webpack.docschina.org/concepts/plugins/) 甚至大家很熟悉的 [Vue.use()](https://cn.vuejs.org/v2/api/#Vue-use)，它们本质上对外暴露出一些内部的时机和属性，让用户去写一些代码来介入框架运行的各个时机之中。
+有没有一种机制，可以让代码**按照功能点聚合**，而不是散落在各个函数中？
 
-那么，我们是否可以考虑把「处理每个节点、`column`、每次 `onExpand`」 的时机暴露出去。
+```js
 
-这样让用户也可以介入这些流程，去改写一些属性，调用一些内部方法，以此实现上面的几个功能呢？
+// 🔖 分页逻辑
+const usePaginationPlugin = () => {}
+// 🎈 加载更多逻辑
+const useLazyloadPlugin = () => {}
+// 🏁 缩进线逻辑
+const useIndentLinePlugin = () => {}
 
-我们设计插件机制，想要实现这两个目标：
+export const TreeTable = (rawProps) => {
+  usePaginationPlugin()
 
-1. **逻辑解耦**，把每个小功能的代码收缩到插件文件中去，不和组件耦合起来，增加可维护性。
-2. **用户共建**，内部使用的话同事方便共建，开源后社区方便共建，当然这要求你编写的插件机制足够完善，文档足够友好。
+  useLazyloadPlugin()
 
-当然插件也会带来一些缺点，设计一套完善的插件机制也是非常复杂的，像 Webpack、Rollup、Redux 的插件机制都有设计的非常精良的地方可以参考学习。
+  useIndentLinePlugin()
 
-不过回到本文，我只是实现的一个最简化版的插件系统。
-
-首先，设计一下插件的接口：
-
-```ts
-export interface TreeTablePlugin<T = any> {
-  (props: ResolvedProps, context: TreeTablePluginContext): {
-    /**
-     * 可以访问到每一个 column 并修改
-     */
-    onColumn?(column: ColumnProps<T>): void
-    /**
-     * 可以访问到每一个节点数据
-     * 在初始化或者新增子节点以后都会执行
-     */
-    onRecord?(record): void
-    /**
-     * 节点展开的回调函数
-     */
-    onExpand?(expanded, record): void
-  }
-}
-
-export interface TreeTablePluginContext {
-  forceUpdate: React.DispatchWithoutAction;
-  addChildList(record, childList): void;
-  expandedRowKeys: TableProps<any>['expandedRowKeys'];
-  setExpandedRowKeys: (v: string[] | number[] | undefined) => void;
+  return <Table />
 }
 ```
 
-我把插件设计成一个**函数**，这样每次执行都可以拿到最新的 `props` 和 `context`。
+没错，就是很像 `VueCompositionAPI` 和 `React Hook` 在逻辑解耦方面所做的改进，但是在这个回调函数的写法形态下，好像不太容易做到？
 
-`context` 其实就是组件内一些依赖上下文的工具函数等等，比如 `forceUpdate`, `addChildList` 等函数都可以挂在上面。
+下一篇文章，我会聊聊如何利用自己设计的**插件机制**来优化这个组件的耦合代码。
 
-接下来，由于插件可能有多个，而且内部可能会有一些解析流程，所以我设计一个运行插件的 hook 函数 `usePluginContainer`：
+## 感谢大家
 
-```ts
-export const usePluginContainer = (
-  props: ResolvedProps,
-  context: TreeTablePluginContext
-) => {
-  const { plugins: rawPlugins } = props
+欢迎关注 ssh，前端潮流趋势、原创面试热点文章应有尽有。
 
-  const plugins = rawPlugins.map((plugin) => plugin?.(props, context))
+记得关注后加我好友，我会不定期分享前端知识，行业信息。2021 陪你一起度过。
 
-  const container = {
-    onColumn(column: ColumnProps<any>) {
-      for (const plugin of plugins) {
-        plugin?.onColumn?.(column)
-      }
-    },
-    onRecord(record) {
-      for (const plugin of plugins) {
-        plugin?.onRecord?.(record)
-      }
-    },
-    onExpand(expanded, record) {
-      for (const plugin of plugins) {
-        plugin?.onExpand?.(expanded, record)
-      }
-    }
-  }
-
-  return container
-}
-```
-
-目前的流程很简单，只是把每个 `plugin` 函数调用一下，然后提供对外的包装接口。
-
-接着就可以在组件中调用这个 hook 函数：
-
-```ts
-export const TreeTable: React.FC<ITreeTableProps> = (props) => {
-  const [_, forceUpdate] = useReducer((x) => x + 1, 0)
-
-  const [expandedRowKeys, setExpandedRowKeys] = useControllableValue<
-    TableProps<any>['expandedRowKeys']
-  >(props, {
-    defaultValue: [],
-    valuePropName: 'expandedRowKeys',
-    trigger: 'onExpandedRowsChange'
-  })
-
-  const pluginContext = {
-    forceUpdate,
-    addChildList,
-    expandedRowKeys,
-    setExpandedRowKeys
-  }
-
-  // 这里拿到了 pluginContainer
-  const pluginContainer = usePluginContainer(props, pluginContext)
-}
-```
-
-之后，在各个流程的相应位置，都通过这个 hook 返回的实例来执行相应的函数即可：
-
-```ts
-export const TreeTable: React.FC<ITreeTableProps> = props => {
-  ...
-
-  // 这里拿到了 pluginContainer
-  const pluginContainer = usePluginContainer(props, pluginContext);
-
-  /**
-   *  需要对 dataSource 进行一些改写 增加层级、父节点、loading 节点、分页等信息
-   */
-  function rewriteTree({
-    dataSource,
-    // 在动态追加子树节点的时候 需要手动传入 parent 引用
-    parentNode = null,
-  }) {
-    pluginContainer.onRecord(parentNode);
-
-    traverseTree(dataSource, childrenColumnName, (node, parent, level) => {
-      pluginContainer.onRecord(node);
-    });
-  }
-
-  function rewriteColumns() {
-    columns.forEach(column => {
-      pluginContainer.onColumn(column);
-    });
-  }
-
-  const onExpand = async (expanded, record) => {
-    pluginContainer.onExpand(expanded, record);
-  };
-}
-```
-
-之后，我们就可以把之前**分页相关**的逻辑直接抽象成 `pagination-plugin`：
-
-```ts
-export const paginationPlugin: TreeTablePlugin = (
-  props: ResolvedProps,
-  context: TreeTablePluginContext
-) => {
-  const { forceUpdate, addChildList } = context
-  const {
-    childrenPagination,
-    childrenColumnName,
-    rowKey,
-    indentLineDataIndex
-  } = props
-
-  const handlePagination = (node) => {
-    // 先加入渲染分页器占位节点
-  }
-
-  const rewritePaginationRender = (column) => {
-    // 改写 column 的 render
-    // 渲染分页器
-  }
-
-  return {
-    onRecord: handlePagination,
-    onColumn: rewritePaginationRender
-  }
-}
-```
-
-而**懒加载节点**相关的逻辑也可以抽象成 `lazyload-plugin`：
-
-```ts
-export const lazyloadPlugin: TreeTablePlugin = (
-  props: ResolvedProps,
-  context: TreeTablePluginContext
-) => {
-  const { childrenColumnName, rowKey, hasNextKey, onLoadMore } = props
-  const { addChildList, expandedRowKeys, setExpandedRowKeys } = context
-
-  // 处理懒加载占位节点逻辑
-  const handleNextLevelLoader = (node) => {}
-
-  const onExpand = async (expanded, record) => {
-    if (expanded && record[hasNextKey] && onLoadMore) {
-      // 处理懒加载逻辑
-    }
-  }
-
-  return {
-    onRecord: handleNextLevelLoader,
-    onExpand: onExpand
-  }
-}
-```
-
-至此，主函数被精简到 `150` 行左右，新功能相关的函数全部被移到插件目录中去了，无论是想要新增或者删减、开关功能都变的非常容易。
-
-此时的目录结构：
-
-![目录结构](https://images.gitee.com/uploads/images/2021/0301/193435_38e8a9ba_1087321.png '屏幕截图.png')
-
-## 总结
-
-本文通过讲述扩展 `Table` 组件的如下功能：
-
-- ✨ 每个层级**缩进指示线**
-- ✨ 远程**懒加载**子节点
-- ✨ 每个层级支持**分页**
-
-以及开发过程中出现代码的耦合，难以维护问题，进而延伸探索**插件机制**在组件中的设计和使用，虽然本文设计的插件还是最简陋的版本，但是原理大致上如此，希望能够对你有所启发。
+![image](https://user-images.githubusercontent.com/23615778/108619258-76929d80-745e-11eb-90bf-023abec85d80.png)
