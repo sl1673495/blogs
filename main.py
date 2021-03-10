@@ -173,7 +173,8 @@ def main(token, repo_name="blogs", issue_number=None, dir_name=BACKUP_DIR):
     for func in [add_md_top, add_md_recent, add_md_label, add_md_todo]:
         func(repo, "README.md", me)
 
-    to_generate_issues = get_to_generate_issues(repo, dir_name, me, issue_number)
+    to_generate_issues = get_to_generate_issues(
+        repo, dir_name, me, issue_number)
     # save md files to backup folder
     for issue in to_generate_issues:
         save_issue(issue, me, dir_name)
@@ -183,8 +184,8 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
     md_dir = os.path.join(
         dir_name, str(issue.id)
     )
-    os.rmdir
-    os.makedirs(md_dir)    
+    shutil.rmtree(md_dir)
+    os.makedirs(md_dir)
     md_name = os.path.join(md_dir, "index.md")
     with open(md_name, "w") as f:
         f.write('---\n')
@@ -194,12 +195,14 @@ def save_issue(issue, me, dir_name=BACKUP_DIR):
         f.write('---\n\n')
         f.write(issue.body)
 
+
 print(os.path.abspath(BACKUP_DIR))
 shutil.rmtree(os.path.abspath(BACKUP_DIR))
 os.makedirs(BACKUP_DIR)
 parser = argparse.ArgumentParser()
 parser.add_argument("github_token", help="github_token")
 parser.add_argument("repo_name", help="repo_name")
-parser.add_argument("--issue_number", help="issue_number", default=None, required=False)
+parser.add_argument("--issue_number", help="issue_number",
+                    default=None, required=False)
 options = parser.parse_args()
 main(options.github_token, options.repo_name, options.issue_number)
