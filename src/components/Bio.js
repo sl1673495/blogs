@@ -29,8 +29,14 @@ class Bio extends React.Component {
         )}
 
         <p style={{ maxWidth: 310 }}>
-          Personal blog by <a href={githubUrl}>{username}</a>. I&nbsp;explain
-          with words and code.
+          ssh 的个人博客，Github: <a href={githubUrl}>{username}</a> / 掘金：
+          <a href="https://juejin.im/user/2330620350708823">ssh</a> / 知乎：
+          <a href="https://www.zhihu.com/people/dan-shi-hao-43">ssh</a> /
+          公众号：
+          <a href="https://ssh-1300257814.cos.ap-shanghai.myqcloud.com/public_qrcode">
+            前端从进阶到入院
+          </a>
+          / LeetCode：<a href="https://leetcode-cn.com/u/ssh-2/">ssh</a>
         </p>
       </div>
     );
