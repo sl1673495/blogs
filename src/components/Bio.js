@@ -31,8 +31,7 @@ class Bio extends React.Component {
         <p style={{ maxWidth: 310 }}>
           ssh 的个人博客，Github: <a href={githubUrl}>{username}</a> / 掘金：
           <a href="https://juejin.im/user/2330620350708823">ssh</a> / 知乎：
-          <a href="https://www.zhihu.com/people/dan-shi-hao-43">ssh</a> /
-          公众号：
+          <a href="https://www.zhihu.com/people/ssh-fe">ssh</a> / 公众号：
           <a href="https://user-gold-cdn.xitu.io/2020/4/5/17149cbcaa96ff26?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
             前端从进阶到入院
           </a>
