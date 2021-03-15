@@ -129,9 +129,9 @@
   <span class="token punctuation">{</span> value<span class="token punctuation">:</span> <span class="token string">'first'</span><span class="token punctuation">,</span> update<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span> value<span class="token punctuation">:</span> <span class="token string">'second'</span><span class="token punctuation">,</span> update<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span></code></pre></div>
-<p>用图来标识这个查找过程是这样的：</p>
+<p>用图来表示这个查找过程是这样的：</p>
 <p><img src="https://images.gitee.com/uploads/images/2021/0312/205942_86865f67_1087321.png" alt="第一次渲染" title="屏幕截图.png"></p>
-<p>假设第二次渲染的时候，<code class="language-text">Math.random()</code> 返回的随机值是 <code class="language-text">0.3</code>，此时只有第二个 useState 被执行了，那么它对应的全局 <code class="language-text">currentIndex</code> 会是 0，这时候去 <code class="language-text">_hooks[0]</code> 中拿到的确是 <code class="language-text">first</code> 所对应的状态，这就会造成渲染混乱。本应该渲染出 <code class="language-text">second</code> 的地方渲染出了 <code class="language-text">first</code>。</p>
+<p>假设第二次渲染的时候，<code class="language-text">Math.random()</code> 返回的随机值是 <code class="language-text">0.3</code>，此时只有第二个 useState 被执行了，那么它对应的全局 <code class="language-text">currentIndex</code> 会是 0，这时候去 <code class="language-text">_hooks[0]</code> 中拿到的却是 <code class="language-text">first</code> 所对应的状态，这就会造成渲染混乱。</p>
 <p><img src="https://images.gitee.com/uploads/images/2021/0312/210043_bd1e68e8_1087321.png" alt="第二次渲染" title="屏幕截图.png"></p>
 <p>没错，本应该值为 <code class="language-text">second</code> 的 value，莫名其妙的被指向了 <code class="language-text">first</code>，渲染完全错误！</p>
 <p>以这个例子来看：</p>

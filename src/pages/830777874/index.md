@@ -77,11 +77,11 @@ _hooks: [
 ]
 ```
 
-用图来标识这个查找过程是这样的：
+用图来表示这个查找过程是这样的：
 
 ![第一次渲染](https://images.gitee.com/uploads/images/2021/0312/205942_86865f67_1087321.png "屏幕截图.png")
 
-假设第二次渲染的时候，`Math.random()` 返回的随机值是 `0.3`，此时只有第二个 useState 被执行了，那么它对应的全局 `currentIndex` 会是 0，这时候去 `_hooks[0]` 中拿到的确是 `first` 所对应的状态，这就会造成渲染混乱。本应该渲染出 `second` 的地方渲染出了 `first`。
+假设第二次渲染的时候，`Math.random()` 返回的随机值是 `0.3`，此时只有第二个 useState 被执行了，那么它对应的全局 `currentIndex` 会是 0，这时候去 `_hooks[0]` 中拿到的却是 `first` 所对应的状态，这就会造成渲染混乱。
 
 ![第二次渲染](https://images.gitee.com/uploads/images/2021/0312/210043_bd1e68e8_1087321.png "屏幕截图.png")
 
