@@ -175,7 +175,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">var</span> dataPromise <span class="token operator">=</span> gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-dataPromise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+dataPromise<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token comment">// data1的value被拿到了 继续调用next并且传递给data</span>
     <span class="token keyword">var</span> data2Promise <span class="token operator">=</span> gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span>
     

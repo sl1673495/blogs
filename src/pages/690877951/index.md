@@ -144,7 +144,7 @@ var gen = testG()
 
 var dataPromise = gen.next()
 
-dataPromise.then((value1) => {
+dataPromise.value.then((value1) => {
     // data1的value被拿到了 继续调用next并且传递给data
     var data2Promise = gen.next(value1)
     
