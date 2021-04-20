@@ -7,6 +7,7 @@
 
 Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
+- [VueConf 2021 抢先看，Evan You 和你聊聊 Vue 的未来](https://github.com/sl1673495/blogs/issues/80)--2021-04-20
 - [打破 React Hook 必须按顺序、不能在条件语句中调用的枷锁](https://github.com/sl1673495/blogs/issues/79)--2021-03-13
 - [如何编写神奇的「插件机制」，优化基于 Antd Table 封装表格的混乱代码](https://github.com/sl1673495/blogs/issues/78)--2021-03-02
 - [给  Antd Table 组件编写缩进指引线、子节点懒加载等功能](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
@@ -94,6 +95,7 @@ Thanks to https://github.com/yihong0618/gitblog
 </details>
 
 ## 前端趋势
+- [VueConf 2021 抢先看，Evan You 和你聊聊 Vue 的未来](https://github.com/sl1673495/blogs/issues/80)--2021-04-20
 - [尤雨溪：关于 Vue3 和生活，想和前端们聊聊这些](https://github.com/sl1673495/blogs/issues/74)--2021-02-08
 - [Vuex 4.0 正式发布！新年官方生态齐聚一堂](https://github.com/sl1673495/blogs/issues/73)--2021-02-05
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
