@@ -162,7 +162,6 @@ class BlogPostTemplate extends React.Component {
                 }}
               >
                 {formatPostDate(post.frontmatter.date, lang)}
-                {` • ${formatReadingTime(post.timeToRead)}`}
               </p>
               {translations.length > 0 && (
                 <Translations
@@ -227,7 +226,6 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
-      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
