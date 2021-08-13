@@ -11,7 +11,7 @@
 
 ![image](https://user-images.githubusercontent.com/23615778/129355285-d0f6f14f-0766-4548-a88e-8070ff6ea738.png)
 
-Thanks to https://github.com/yihong0618/gitblog
+感谢 https://github.com/yihong0618/gitblog 提供自动化脚本的灵感。
 ## 最近更新
 - [[RFC] 关于 Vue 3 的 IE11 支持](https://github.com/sl1673495/blogs/issues/81)--2021-05-12
 - [VueConf 2021 抢先看，Evan You 和你聊聊 Vue 的未来](https://github.com/sl1673495/blogs/issues/80)--2021-04-20
