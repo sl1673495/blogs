@@ -50,24 +50,24 @@ jobs:
           source venv/bin/activate
           python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_numbe '${{ github.event.issue.number }}'
 
-      # - name: Use Node.js 12.x
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 12.x
-      # - run: yarn
-      # - run: yarn build
-      #   env:
-      #     CI: true
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn
+      - run: yarn build
+        env:
+          CI: true
 
-      # - name: Push README
-      #   uses: github-actions-x/commit@v2.6
-      #   with:
-      #     github-token: ${{ secrets.G_T }}
-      #     commit-message: 'Refresh README and pages'
-      #     files: .
-      #     rebase: 'true'
-      #     name: ${{ env.GITHUB_NAME }}
-      #     email: ${{ env.GITHUB_EMAIL }}
+      - name: Push README
+        uses: github-actions-x/commit@v2.6
+        with:
+          github-token: ${{ secrets.G_T }}
+          commit-message: 'Refresh README and pages'
+          files: .
+          rebase: 'true'
+          name: ${{ env.GITHUB_NAME }}
+          email: ${{ env.GITHUB_EMAIL }}
       # - name: Vercel Action
       #   id: vercel-action
       #   uses: amondnet/vercel-action@v20.0.0
