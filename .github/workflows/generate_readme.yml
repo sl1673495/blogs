@@ -50,35 +50,35 @@ jobs:
           source venv/bin/activate
           python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_numbe '${{ github.event.issue.number }}'
 
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - run: yarn
-      - run: yarn build
-        env:
-          CI: true
+      # - name: Use Node.js 12.x
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12.x
+      # - run: yarn
+      # - run: yarn build
+      #   env:
+      #     CI: true
 
-      - name: Push README
-        uses: github-actions-x/commit@v2.6
-        with:
-          github-token: ${{ secrets.G_T }}
-          commit-message: 'Refresh README and pages'
-          files: .
-          rebase: 'true'
-          name: ${{ env.GITHUB_NAME }}
-          email: ${{ env.GITHUB_EMAIL }}
-      - name: Vercel Action
-        id: vercel-action
-        uses: amondnet/vercel-action@v20.0.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod'
-          github-comment: false
-          vercel-org-id: ${{ secrets.NOW_ORG_ID }}
-          vercel-project-id: ${{ secrets.NOW_PROJECT_ID_STATIC }}
-          working-directory: ./public
-      - name: preview-url
-        run: |
-          echo 发布成功：${{ steps.vercel-action.outputs.preview-url }}
+      # - name: Push README
+      #   uses: github-actions-x/commit@v2.6
+      #   with:
+      #     github-token: ${{ secrets.G_T }}
+      #     commit-message: 'Refresh README and pages'
+      #     files: .
+      #     rebase: 'true'
+      #     name: ${{ env.GITHUB_NAME }}
+      #     email: ${{ env.GITHUB_EMAIL }}
+      # - name: Vercel Action
+      #   id: vercel-action
+      #   uses: amondnet/vercel-action@v20.0.0
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-args: '--prod'
+      #     github-comment: false
+      #     vercel-org-id: ${{ secrets.NOW_ORG_ID }}
+      #     vercel-project-id: ${{ secrets.NOW_PROJECT_ID_STATIC }}
+      #     working-directory: ./public
+      # - name: preview-url
+      #   run: |
+      #     echo 发布成功：${{ steps.vercel-action.outputs.preview-url }}
