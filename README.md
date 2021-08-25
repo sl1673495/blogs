@@ -7,30 +7,28 @@
 
 我是 ssh，欢迎找我交个朋友，微信：**[sshsunlight](https://images.gitee.com/uploads/images/2021/0528/190352_ae7dcd60_1087321.png)**，我喜欢分享前端的前沿趋势和一些有趣的事情。
 
-关注公众号**前端从进阶到入院**，精选超级优质的文章，助你前端成神之路。
+关注公众号「**[前端从进阶到入院](https://user-gold-cdn.xitu.io/2020/4/5/17149ccf687b7699?w=910&h=436&f=jpeg&s=78195)**」，精选超级优质的文章，助你前端成神之路。
 
-![image](https://user-images.githubusercontent.com/23615778/129355285-d0f6f14f-0766-4548-a88e-8070ff6ea738.png)
-
-感谢 https://github.com/yihong0618/gitblog 提供自动化脚本的灵感。
+Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
+- [想进字节跳动的新生代前端民工们，都提出了什么问题？](https://github.com/sl1673495/blogs/issues/90)--2021-08-20
+- [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
+- [如何在大型代码仓库中删掉 6w 行废弃的文件和 exports？](https://github.com/sl1673495/blogs/issues/88)--2021-08-13
+- [我的学习方法是每天看 10 个 NPM 模块？](https://github.com/sl1673495/blogs/issues/84)--2021-06-06
+- [Vite 太快了，烦死了，是时候该小睡一会了。](https://github.com/sl1673495/blogs/issues/83)--2021-05-31
 - [[RFC] 关于 Vue 3 的 IE11 支持](https://github.com/sl1673495/blogs/issues/81)--2021-05-12
 - [VueConf 2021 抢先看，Evan You 和你聊聊 Vue 的未来](https://github.com/sl1673495/blogs/issues/80)--2021-04-20
 - [打破 React Hook 必须按顺序、不能在条件语句中调用的枷锁](https://github.com/sl1673495/blogs/issues/79)--2021-03-13
-- [如何编写神奇的「插件机制」，优化基于 Antd Table 封装表格的混乱代码](https://github.com/sl1673495/blogs/issues/78)--2021-03-02
-- [给  Antd Table 组件编写缩进指引线、子节点懒加载等功能](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
-- [TypeScript 中你不一定知道的 top types，在用 any 之前先试试 unknown？](https://github.com/sl1673495/blogs/issues/76)--2021-02-28
-- [浅谈 Vite 2.0 原理，依赖预编译，插件机制是如何兼容 Rollup 的？](https://github.com/sl1673495/blogs/issues/75)--2021-02-21
-- [尤雨溪：关于 Vue3 和生活，想和前端们聊聊这些](https://github.com/sl1673495/blogs/issues/74)--2021-02-08
-- [Vuex 4.0 正式发布！新年官方生态齐聚一堂](https://github.com/sl1673495/blogs/issues/73)--2021-02-05
-- [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
+## dependencies
 ## React
+- [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
 - [打破 React Hook 必须按顺序、不能在条件语句中调用的枷锁](https://github.com/sl1673495/blogs/issues/79)--2021-03-13
 - [如何编写神奇的「插件机制」，优化基于 Antd Table 封装表格的混乱代码](https://github.com/sl1673495/blogs/issues/78)--2021-03-02
 - [给  Antd Table 组件编写缩进指引线、子节点懒加载等功能](https://github.com/sl1673495/blogs/issues/77)--2021-03-01
 - [React Core Team 成员开发的火焰图组件技术揭秘。](https://github.com/sl1673495/blogs/issues/72)--2021-01-24
-- [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 <details><summary>显示更多</summary>
 
+- [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
 - [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
 - [我在工作中写 React 学到了什么？](https://github.com/sl1673495/blogs/issues/62)--2020-10-20
@@ -49,13 +47,14 @@
 </details>
 
 ## TypeScript
+- [如何在大型代码仓库中删掉 6w 行废弃的文件和 exports？](https://github.com/sl1673495/blogs/issues/88)--2021-08-13
 - [TypeScript 中你不一定知道的 top types，在用 any 之前先试试 unknown？](https://github.com/sl1673495/blogs/issues/76)--2021-02-28
 - [🔖TypeScript 备忘录：如何在 React 中完美运用？](https://github.com/sl1673495/blogs/issues/68)--2020-12-17
 - [利用 TS 4.1 新特性实现 Vuex 无限层级命名空间的 dispatch 类型推断。](https://github.com/sl1673495/blogs/issues/60)--2020-09-05
 - [TypeScript 4.1 新特性：字符串模板类型，Vuex 终于有救了？](https://github.com/sl1673495/blogs/issues/57)--2020-09-02
-- [TypeScript 中的子类型、逆变、协变是什么？](https://github.com/sl1673495/blogs/issues/54)--2020-07-30
 <details><summary>显示更多</summary>
 
+- [TypeScript 中的子类型、逆变、协变是什么？](https://github.com/sl1673495/blogs/issues/54)--2020-07-30
 - [Vue3 TypeScript 之 Ref 类型从零实现](https://github.com/sl1673495/blogs/issues/45)--2020-04-13
 - [React Hook + TypeScript 深入浅出实现一个购物车（陷阱、性能优化、自定义hook）](https://github.com/sl1673495/blogs/issues/36)--2020-03-19
 - [TypeScript 参数简化实战（进阶知识点conditional types）](https://github.com/sl1673495/blogs/issues/34)--2020-02-05
@@ -69,13 +68,14 @@
 </details>
 
 ## Vue
+- [Vite 太快了，烦死了，是时候该小睡一会了。](https://github.com/sl1673495/blogs/issues/83)--2021-05-31
 - [浅谈 Vite 2.0 原理，依赖预编译，插件机制是如何兼容 Rollup 的？](https://github.com/sl1673495/blogs/issues/75)--2021-02-21
 - [利用 TS 4.1 新特性实现 Vuex 无限层级命名空间的 dispatch 类型推断。](https://github.com/sl1673495/blogs/issues/60)--2020-09-05
 - [Vue3 + TypeScript 实现递归菜单组件](https://github.com/sl1673495/blogs/issues/56)--2020-08-21
 - [Vue3 究竟好在哪里？（和 React Hook 的详细对比）](https://github.com/sl1673495/blogs/issues/46)--2020-04-20
-- [Vue3 的响应式和以前有什么区别，Proxy 无敌？](https://github.com/sl1673495/blogs/issues/44)--2020-04-13
 <details><summary>显示更多</summary>
 
+- [Vue3 的响应式和以前有什么区别，Proxy 无敌？](https://github.com/sl1673495/blogs/issues/44)--2020-04-13
 - [Vue 的计算属性真的会缓存吗？（原理揭秘）](https://github.com/sl1673495/blogs/issues/43)--2020-04-10
 - [驳《前端常见的Vue面试题目汇总》](https://github.com/sl1673495/blogs/issues/42)--2020-04-09
 - [Vue 进阶必学之高阶组件实战](https://github.com/sl1673495/blogs/issues/41)--2020-04-06
@@ -108,13 +108,14 @@
 - [Vuex 4.0 正式发布！新年官方生态齐聚一堂](https://github.com/sl1673495/blogs/issues/73)--2021-02-05
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
 ## 学习
+- [我的学习方法是每天看 10 个 NPM 模块？](https://github.com/sl1673495/blogs/issues/84)--2021-06-06
 - [中级前端面试指南](https://github.com/sl1673495/blogs/issues/52)--2020-06-27
 - [前端「N皇后」递归回溯经典问题图解](https://github.com/sl1673495/blogs/issues/51)--2020-06-18
 - [前端电商 sku 全排列的递归回溯算法实战](https://github.com/sl1673495/blogs/issues/50)--2020-06-15
 - [前端动画必知必会：React 和 Vue 都在用的 FLIP 思想实战](https://github.com/sl1673495/blogs/issues/49)--2020-06-03
-- [前端瀑布流布局如何应用动态规划和贪心算法](https://github.com/sl1673495/blogs/issues/48)--2020-06-02
 <details><summary>显示更多</summary>
 
+- [前端瀑布流布局如何应用动态规划和贪心算法](https://github.com/sl1673495/blogs/issues/48)--2020-06-02
 - [深入解析你不知道的 EventLoop 和浏览器渲染、帧动画、空闲回调](https://github.com/sl1673495/blogs/issues/47)--2020-05-21
 - [Vue3 究竟好在哪里？（和 React Hook 的详细对比）](https://github.com/sl1673495/blogs/issues/46)--2020-04-20
 - [Vue3 TypeScript 之 Ref 类型从零实现](https://github.com/sl1673495/blogs/issues/45)--2020-04-13
@@ -130,9 +131,16 @@
 </details>
 
 ## 工程化
+- [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
+- [如何在大型代码仓库中删掉 6w 行废弃的文件和 exports？](https://github.com/sl1673495/blogs/issues/88)--2021-08-13
+- [Vite 太快了，烦死了，是时候该小睡一会了。](https://github.com/sl1673495/blogs/issues/83)--2021-05-31
 - [浅谈 Vite 2.0 原理，依赖预编译，插件机制是如何兼容 Rollup 的？](https://github.com/sl1673495/blogs/issues/75)--2021-02-21
 - [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
+<details><summary>显示更多</summary>
+
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
+</details>
+
 ## 性能优化
 - [Web 现代应用程序架构下的性能优化，渐进式的极致艺术。](https://github.com/sl1673495/blogs/issues/65)--2020-11-19
 - [我在工作中写 React 学到了什么？性能优化篇。](https://github.com/sl1673495/blogs/issues/63)--2020-10-29
@@ -155,13 +163,14 @@
 - [前端电商 sku 全排列的递归回溯算法实战](https://github.com/sl1673495/blogs/issues/50)--2020-06-15
 - [前端瀑布流布局如何应用动态规划和贪心算法](https://github.com/sl1673495/blogs/issues/48)--2020-06-02
 ## 面试
+- [想进字节跳动的新生代前端民工们，都提出了什么问题？](https://github.com/sl1673495/blogs/issues/90)--2021-08-20
 - [深入探索前端路由，手写 react-mini-router](https://github.com/sl1673495/blogs/issues/61)--2020-09-16
 - [手写async await的最简实现（20行）](https://github.com/sl1673495/blogs/issues/59)--2020-09-02
 - [最简实现Promise，支持异步链式调用（20行）](https://github.com/sl1673495/blogs/issues/58)--2020-09-02
 - [Vue3 + TypeScript 实现递归菜单组件](https://github.com/sl1673495/blogs/issues/56)--2020-08-21
-- [一道蚂蚁金服异步串行面试题](https://github.com/sl1673495/blogs/issues/55)--2020-08-13
 <details><summary>显示更多</summary>
 
+- [一道蚂蚁金服异步串行面试题](https://github.com/sl1673495/blogs/issues/55)--2020-08-13
 - [Vue3 的响应式和以前有什么区别，Proxy 无敌？](https://github.com/sl1673495/blogs/issues/44)--2020-04-13
 - [Vue 的生命周期之间到底做了什么事清？（源码详解）](https://github.com/sl1673495/blogs/issues/40)--2020-04-04
 - [为什么 Vue 中不要用 index 作为 key？（diff 算法详解）](https://github.com/sl1673495/blogs/issues/39)--2020-04-02
