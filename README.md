@@ -5,7 +5,7 @@
 
 博客网站（不定期同步）：https://ssh-blog.vercel.app
 
-我是 ssh，欢迎找我交个朋友，微信：**[sshsunlight](https://images.gitee.com/uploads/images/2021/0528/190352_ae7dcd60_1087321.png)**，我喜欢分享前端的前沿趋势和一些有趣的事情。
+我是 ssh，欢迎找我交个朋友，微信：**[sshsunlight](https://oscimg.oschina.net/oscnet/f7c4c8a9-bde9-468a-aeaa-4d771d972087.png)**，我喜欢分享前端的前沿趋势和一些有趣的事情。
 
 关注公众号「**[前端从进阶到入院](https://oscimg.oschina.net/oscnet/up-fa75de6c6ac2dbce9cb2e85b58753d4568b.png)**」，精选超级优质的文章，助你前端成神之路。
 
