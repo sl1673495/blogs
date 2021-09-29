@@ -1,11 +1,17 @@
 ## ssh 的博客
-我的技术博客，不定时更新，收藏点star，订阅点watch。
+我的技术博客，不定时更新。
 
-我会在公众号「**前端从进阶到入院**」每日更新精心挑选的技术文章（标准就是我自己看了也会有收获），欢迎大家一起成长。
+收藏点star，订阅点watch。
 
-![qrcode_for_gh_d2b31290dd8b_258](https://user-images.githubusercontent.com/23615778/134800856-9a44fa9a-4f1b-4884-a0b6-b58c5f3331df.jpg)
+博客网站（不定期同步）：https://ssh-blog.vercel.app
 
+我是 ssh，欢迎找我交个朋友，微信：**[sshsunlight](https://images.gitee.com/uploads/images/2021/0528/190352_ae7dcd60_1087321.png)**，我喜欢分享前端的前沿趋势和一些有趣的事情。
+
+关注公众号「**[前端从进阶到入院](https://user-gold-cdn.xitu.io/2020/4/5/17149ccf687b7699?w=910&h=436&f=jpeg&s=78195)**」，精选超级优质的文章，助你前端成神之路。
+
+Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
+- [Nuxt 3 来了！](https://github.com/sl1673495/blogs/issues/93)--2021-09-29
 - [应用性能前端监控，字节跳动这些年经验都在这了](https://github.com/sl1673495/blogs/issues/92)--2021-09-22
 - [想进字节跳动的新生代前端民工们，都提出了什么问题？](https://github.com/sl1673495/blogs/issues/90)--2021-08-20
 - [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
@@ -13,7 +19,6 @@
 - [我的学习方法是每天看 10 个 NPM 模块？](https://github.com/sl1673495/blogs/issues/84)--2021-06-06
 - [Vite 太快了，烦死了，是时候该小睡一会了。](https://github.com/sl1673495/blogs/issues/83)--2021-05-31
 - [[RFC] 关于 Vue 3 的 IE11 支持](https://github.com/sl1673495/blogs/issues/81)--2021-05-12
-- [VueConf 2021 抢先看，Evan You 和你聊聊 Vue 的未来](https://github.com/sl1673495/blogs/issues/80)--2021-04-20
 ## dependencies
 ## React
 - [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
@@ -97,11 +102,16 @@
 </details>
 
 ## 前端趋势
+- [Nuxt 3 来了！](https://github.com/sl1673495/blogs/issues/93)--2021-09-29
 - [[RFC] 关于 Vue 3 的 IE11 支持](https://github.com/sl1673495/blogs/issues/81)--2021-05-12
 - [VueConf 2021 抢先看，Evan You 和你聊聊 Vue 的未来](https://github.com/sl1673495/blogs/issues/80)--2021-04-20
 - [尤雨溪：关于 Vue3 和生活，想和前端们聊聊这些](https://github.com/sl1673495/blogs/issues/74)--2021-02-08
 - [Vuex 4.0 正式发布！新年官方生态齐聚一堂](https://github.com/sl1673495/blogs/issues/73)--2021-02-05
+<details><summary>显示更多</summary>
+
 - [Vue Router 4.0 正式发布！焕然一新。](https://github.com/sl1673495/blogs/issues/67)--2020-12-08
+</details>
+
 ## 学习
 - [我的学习方法是每天看 10 个 NPM 模块？](https://github.com/sl1673495/blogs/issues/84)--2021-06-06
 - [中级前端面试指南](https://github.com/sl1673495/blogs/issues/52)--2020-06-27
@@ -126,13 +136,14 @@
 </details>
 
 ## 工程化
+- [应用性能前端监控，字节跳动这些年经验都在这了](https://github.com/sl1673495/blogs/issues/92)--2021-09-22
 - [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
 - [如何在大型代码仓库中删掉 6w 行废弃的文件和 exports？](https://github.com/sl1673495/blogs/issues/88)--2021-08-13
 - [Vite 太快了，烦死了，是时候该小睡一会了。](https://github.com/sl1673495/blogs/issues/83)--2021-05-31
 - [浅谈 Vite 2.0 原理，依赖预编译，插件机制是如何兼容 Rollup 的？](https://github.com/sl1673495/blogs/issues/75)--2021-02-21
-- [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 <details><summary>显示更多</summary>
 
+- [Facebook 重构：抛弃 Sass / Less ，迎接原子化 CSS 时代](https://github.com/sl1673495/blogs/issues/69)--2021-01-04
 - [react-dev-inspector 原理解析，点击页面组件自动打开 VSCode 对应文件？](https://github.com/sl1673495/blogs/issues/66)--2020-11-26
 </details>
 
