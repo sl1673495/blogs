@@ -1,10 +1,9 @@
 ## ssh 的博客
-我是 ssh，现在在字节跳动的 Web Infra 担任前端工程师，微信：**[sshsunlight](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/017d568dc1d14cd883cc3238350a39ec~tplv-k3u1fbpfcp-watermark.image)**，欢迎找我交个朋友。
+大家好，我是 ssh，现在在字节跳动的 Web Infra 担任前端工程师，微信：**[sshsunlight](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/017d568dc1d14cd883cc3238350a39ec~tplv-k3u1fbpfcp-watermark.image)**，欢迎找我交个朋友。
 
 我会在公众号「前端从进阶到入院」每日更新精心挑选的技术文章（标准就是我自己看了也会有收获），欢迎大家一起成长。
 
 ![qrcode_for_gh_d2b31290dd8b_258](https://user-images.githubusercontent.com/23615778/134800856-9a44fa9a-4f1b-4884-a0b6-b58c5f3331df.jpg)
-
 ## 最近更新
 - [Nuxt 3 来了！](https://github.com/sl1673495/blogs/issues/93)--2021-09-29
 - [应用性能前端监控，字节跳动这些年经验都在这了](https://github.com/sl1673495/blogs/issues/92)--2021-09-22
