@@ -5,7 +5,6 @@
 
 ![qrcode_for_gh_d2b31290dd8b_258](https://user-images.githubusercontent.com/23615778/134800856-9a44fa9a-4f1b-4884-a0b6-b58c5f3331df.jpg)
 
-Thanks to https://github.com/yihong0618/gitblog
 ## 最近更新
 - [Nuxt 3 来了！](https://github.com/sl1673495/blogs/issues/93)--2021-09-29
 - [应用性能前端监控，字节跳动这些年经验都在这了](https://github.com/sl1673495/blogs/issues/92)--2021-09-22
