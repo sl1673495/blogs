@@ -60,7 +60,7 @@ jobs:
       #     CI: true
 
       - name: Push README
-        uses: github-actions-x/commit@v2.6
+        uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.G_T }}
           commit-message: 'Refresh README and pages'
