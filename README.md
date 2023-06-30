@@ -5,14 +5,6 @@
 
 ![qrcode_for_gh_d2b31290dd8b_258](https://user-images.githubusercontent.com/23615778/134800856-9a44fa9a-4f1b-4884-a0b6-b58c5f3331df.jpg)
 ## 最近更新
-- [Nuxt 3 来了！](https://github.com/sl1673495/blogs/issues/93)--2021-09-29
-- [应用性能前端监控，字节跳动这些年经验都在这了](https://github.com/sl1673495/blogs/issues/92)--2021-09-22
-- [想进字节跳动的新生代前端民工们，都提出了什么问题？](https://github.com/sl1673495/blogs/issues/90)--2021-08-20
-- [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
-- [如何在大型代码仓库中删掉 6w 行废弃的文件和 exports？](https://github.com/sl1673495/blogs/issues/88)--2021-08-13
-- [我的学习方法是每天看 10 个 NPM 模块？](https://github.com/sl1673495/blogs/issues/84)--2021-06-06
-- [Vite 太快了，烦死了，是时候该小睡一会了。](https://github.com/sl1673495/blogs/issues/83)--2021-05-31
-- [[RFC] 关于 Vue 3 的 IE11 支持](https://github.com/sl1673495/blogs/issues/81)--2021-05-12
 ## dependencies
 ## React
 - [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
