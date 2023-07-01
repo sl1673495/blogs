@@ -6,7 +6,6 @@
 ![qrcode_for_gh_d2b31290dd8b_258](https://user-images.githubusercontent.com/23615778/134800856-9a44fa9a-4f1b-4884-a0b6-b58c5f3331df.jpg)
 ## 最近更新
 - [Dan Abramov 接受油管 UP 主的面试挑战，结果差点没写出来居中……？](https://github.com/sl1673495/blogs/issues/111)--2023-06-30
-## dependencies
 ## JavaScript
 - [Dan Abramov 接受油管 UP 主的面试挑战，结果差点没写出来居中……？](https://github.com/sl1673495/blogs/issues/111)--2023-06-30
 ## React
