@@ -6,8 +6,6 @@
 ![qrcode_for_gh_d2b31290dd8b_258](https://user-images.githubusercontent.com/23615778/134800856-9a44fa9a-4f1b-4884-a0b6-b58c5f3331df.jpg)
 ## 最近更新
 - [Dan Abramov 接受油管 UP 主的面试挑战，结果差点没写出来居中……？](https://github.com/sl1673495/blogs/issues/111)--2023-06-30
-## JavaScript
-- [Dan Abramov 接受油管 UP 主的面试挑战，结果差点没写出来居中……？](https://github.com/sl1673495/blogs/issues/111)--2023-06-30
 ## React
 - [未来前端构建工具链的故事里，会有这个 97 年的韩国小哥？](https://github.com/sl1673495/blogs/issues/89)--2021-08-20
 - [打破 React Hook 必须按顺序、不能在条件语句中调用的枷锁](https://github.com/sl1673495/blogs/issues/79)--2021-03-13
