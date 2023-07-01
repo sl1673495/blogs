@@ -1,8 +1,9 @@
+name: Issues_sync
+
 on:
+  workflow_dispatch:
   issues:
-    types:
-      - labeled
-      - edited
+    types: [opened, edited]
 
 jobs:
   issue_to_markdown:
