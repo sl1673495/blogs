@@ -58,14 +58,20 @@ jobs:
       # - run: yarn build
       #   env:
       #     CI: true
+      
+      - name: Issue sync
+      - uses: eunjae-lee/issue-to-markdown@v1
+        with:
+          token: ${{ secrets.G_T }}
+          dest: 'src/pages_test'
 
       - name: Push README
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.G_T }}
           commit-message: 'Refresh README and pages'
-          # files: .
-          files: README.md
+          files: .
+          # files: README.md
           rebase: 'true'
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
